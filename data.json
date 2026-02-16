@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-16T20:24:47.753Z",
+  "lastUpdated": "2026-02-16T20:27:48.188Z",
   "courses": {
     "learnDescription": "These classes are more traditional in structure, mostly consisting of case studies and lectures covering entrepreneurial topics or decision making",
     "practiceDescription": "These classes are experiential and require students to actively develop and work on an entrepreneurial venture or specific skillset; Your efforts and work become the 'instructor' and your instructor becomes a guide to help you get the most out of your experience",
@@ -160,14 +160,6 @@
       "description": "VDWs are a series of workshops, each of which focus on a different entrepreneurial topic or skillset Sessions are non-linear, meaning you can choose a la carte which sessions seem appealing. Missing one session will have no bearing on a future session. Sign-ups are managed through our lu.ma page, but all are welcome to attend even without signing up (except in very rare instances where the session is full)",
       "workshops": [
         {
-          "name": "Solutions to Storytelling: Marketing Yourself and Your Venture",
-          "date": "February 3, 2026",
-          "time": "6:00 PM",
-          "location": "Cambridge Office Building 130",
-          "registrationLink": "https://luma.com/ykbu4hy0",
-          "registrationNote": null
-        },
-        {
           "name": "Resilient Raises: Raising Money in a Tight Funding Environment",
           "date": "February 17, 2026",
           "time": "6:00 PM",
@@ -181,14 +173,6 @@
           "time": "6:00 PM",
           "location": "Cambridge Office Building 130",
           "registrationLink": "https://luma.com/pz8o7d87",
-          "registrationNote": null
-        },
-        {
-          "name": "Real-Time Rehearsal: NRLC Pitch Night Practice",
-          "date": "March 12, 2026",
-          "time": "6:00 PM",
-          "location": "Cambridge Office Building 130",
-          "registrationLink": "https://luma.com/mf8h3tzz",
           "registrationNote": null
         },
         {
