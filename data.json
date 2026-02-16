@@ -1,0 +1,265 @@
+{
+  "lastUpdated": "2026-02-16T20:24:47.753Z",
+  "courses": {
+    "learnDescription": "These classes are more traditional in structure, mostly consisting of case studies and lectures covering entrepreneurial topics or decision making",
+    "practiceDescription": "These classes are experiential and require students to actively develop and work on an entrepreneurial venture or specific skillset; Your efforts and work become the 'instructor' and your instructor becomes a guide to help you get the most out of your experience",
+    "learn": [
+      {
+        "code": "BUSI 222",
+        "name": "Tech Product Design and Development",
+        "prereqs": null,
+        "permission": null
+      },
+      {
+        "code": "BUSI 223",
+        "name": "Business Modeling for Entrepreneurs",
+        "prereqs": null,
+        "permission": null
+      },
+      {
+        "code": "BUSI 360",
+        "name": "Founders Journey",
+        "prereqs": null,
+        "permission": null
+      },
+      {
+        "code": "BUSI 361",
+        "name": "Communication for Entrepreneurs",
+        "prereqs": null,
+        "permission": null
+      },
+      {
+        "code": "BUSI 461",
+        "name": "Financing the Startup Venture",
+        "prereqs": null,
+        "permission": null
+      },
+      {
+        "code": "BUSI 463",
+        "name": "Entrepreneurial Strategy",
+        "prereqs": null,
+        "permission": null
+      }
+    ],
+    "practice": [
+      {
+        "code": "BUSI 220",
+        "name": "Intro to Design and innovation",
+        "prereqs": null,
+        "permission": null
+      },
+      {
+        "code": "BUSI 221",
+        "name": "New Enterprises - Discovery",
+        "prereqs": null,
+        "permission": null
+      },
+      {
+        "code": "BUSI 224",
+        "name": "Bias and Medical Device Design",
+        "prereqs": null,
+        "permission": null
+      },
+      {
+        "code": "BUSI 365",
+        "name": "Design Build Ship",
+        "prereqs": "BUSI 220, BUSI 222, BUSI 369",
+        "permission": "Application-Based"
+      },
+      {
+        "code": "BUSI 369",
+        "name": "New Enterprises",
+        "prereqs": "Recommended: BUSI 221",
+        "permission": null
+      },
+      {
+        "code": "BUSI 465",
+        "name": "Student Venture Fund",
+        "prereqs": "BUSI 461",
+        "permission": null
+      },
+      {
+        "code": "BUSI 469",
+        "name": "New Venture Challenge",
+        "prereqs": null,
+        "permission": "Application-Based"
+      }
+    ]
+  },
+  "programs": [
+    {
+      "name": "Rice Experiment Fund",
+      "shortName": "rXf",
+      "funding": 100,
+      "description": "Rice Experiment Fund (rXf) offers students $100 in funding to conduct a small experiment to quickly validate a potential business idea",
+      "details": "Examples of past experiments include a short series of ads on a social media platform or ingredients to make a batch of product that can be tested by users",
+      "applicationProcess": "After completing a short application, you'll schedule a meeting to discuss your idea with a Lilie staff member. Once the meeting is complete, you'll have $100 to test your idea!",
+      "deadline": "March 15, 2026",
+      "applyUrl": null
+    },
+    {
+      "name": "Launchpad",
+      "shortName": "Launchpad",
+      "funding": 1000,
+      "description": "Launchpad is a guided mentorship program where you actively pursue a potential venture idea through market validation, customer research, and pitch development",
+      "details": "Funding is offered in 3 stages ($100, $300, $600) based on meeting certain venture milestones and making tangible progress bringing your venture to life",
+      "applicationProcess": "You'll complete a short application, meet with a Lilie team member, and begin to build your venture. During stage 2, you'll be matched with a seasoned expert to help guide you.",
+      "deadline": "March 15, 2026",
+      "applyUrl": null
+    },
+    {
+      "name": "Summer Venture Studio",
+      "shortName": "SVS",
+      "funding": 15000,
+      "description": "SVS is an 8-week, fulltime summer accelerator meant to pour gasoline on ventures ready to launch and make major progress over the summer",
+      "details": "Each team is provided with $15k in funding and is expected to be working at Lilie every day of the week -- meaning this opportunity is not compatible with a summer internship",
+      "applicationProcess": "Applications are extraordinarily competitive and accepted from all Rice-affiliated students, be they undergrad, graduate, or post-doctoral.",
+      "deadline": "March 15, 2026",
+      "applyUrl": null
+    }
+  ],
+  "events": {
+    "fiesta": {
+      "description": "The Festival of Innovation and Entrepreneurship in Science, Technology and the Arts marks the beginning of Lilie's academic year and comprise of a week-long series of events in the evenings FIESTA offers a chance to preview Lilie's programming for a year, meet our Summer Accelerator teams, and officially kick off your entrepreneurial journey",
+      "dates": [
+        {
+          "name": "FIESTA Night 1",
+          "date": "August 24, 2026",
+          "time": "6:00 PM",
+          "location": "Cambridge Office Building 130",
+          "registrationLink": null,
+          "registrationNote": "sign-up available summer 2026"
+        },
+        {
+          "name": "FIESTA Night 2",
+          "date": "August 25, 2026",
+          "time": "6:00 PM",
+          "location": "Cambridge Office Building 130",
+          "registrationLink": null,
+          "registrationNote": "sign-up available summer 2026"
+        },
+        {
+          "name": "FIESTA Night 3",
+          "date": "August 26, 2026",
+          "time": "6:00 PM",
+          "location": "Cambridge Office Building 130",
+          "registrationLink": null,
+          "registrationNote": "sign-up available summer 2026"
+        },
+        {
+          "name": "FIESTA Night 4",
+          "date": "August 27, 2026",
+          "time": "6:00 PM",
+          "location": "Cambridge Office Building 130",
+          "registrationLink": null,
+          "registrationNote": "sign-up available summer 2026"
+        }
+      ]
+    },
+    "vdw": {
+      "description": "VDWs are a series of workshops, each of which focus on a different entrepreneurial topic or skillset Sessions are non-linear, meaning you can choose a la carte which sessions seem appealing. Missing one session will have no bearing on a future session. Sign-ups are managed through our lu.ma page, but all are welcome to attend even without signing up (except in very rare instances where the session is full)",
+      "workshops": [
+        {
+          "name": "Solutions to Storytelling: Marketing Yourself and Your Venture",
+          "date": "February 3, 2026",
+          "time": "6:00 PM",
+          "location": "Cambridge Office Building 130",
+          "registrationLink": "https://luma.com/ykbu4hy0",
+          "registrationNote": null
+        },
+        {
+          "name": "Resilient Raises: Raising Money in a Tight Funding Environment",
+          "date": "February 17, 2026",
+          "time": "6:00 PM",
+          "location": "Virtual",
+          "registrationLink": null,
+          "registrationNote": "sign-up available 1/26/2026"
+        },
+        {
+          "name": "Stand & Deliver: The Ultimate Pitching Bootcamp",
+          "date": "February 25, 2026",
+          "time": "6:00 PM",
+          "location": "Cambridge Office Building 130",
+          "registrationLink": "https://luma.com/pz8o7d87",
+          "registrationNote": null
+        },
+        {
+          "name": "Real-Time Rehearsal: NRLC Pitch Night Practice",
+          "date": "March 12, 2026",
+          "time": "6:00 PM",
+          "location": "Cambridge Office Building 130",
+          "registrationLink": "https://luma.com/mf8h3tzz",
+          "registrationNote": null
+        },
+        {
+          "name": "Legal Leg Up: Startup Structure, Incorporation & Beyond",
+          "date": "April 15, 2026",
+          "time": "6:00 PM",
+          "location": "Cambridge Office Building 130",
+          "registrationLink": "https://luma.com/xqqd8cvm",
+          "registrationNote": null
+        }
+      ]
+    },
+    "ignitionHub": {
+      "description": "Ignition Hub is Lilie's start-up career fair, where students from all across campus are welcome to connect with local startups looking to hire",
+      "events": [
+        {
+          "name": "Ignition Hub",
+          "date": "January 29, 2026",
+          "time": "10:00 AM - 2:00 PM",
+          "location": "Grand Hall",
+          "registrationLink": "https://luma.com/qz1475x6",
+          "registrationNote": null
+        }
+      ]
+    },
+    "nrlc": {
+      "description": "NRLC is Lilie's flagship event of the year, where students across campus will pitch their business idea and show off their success The competition is split into 3 rounds: A virtual first round where everyone who registers will pitch, a live second round of the top 12 ventures from round 1, and a celebratory championship round with the final 5 teams Applications are due Sunday, March 1st at 11:59 PM",
+      "applicationDeadline": "March 1, 2026 at 11:59 PM",
+      "applicationUrl": "https://liuidealab.typeform.com/to/eEnt8DVd",
+      "rounds": [
+        {
+          "name": "NRLC Application Due",
+          "date": "March 1, 2026",
+          "time": "11:59 PM",
+          "location": "Virtual",
+          "registrationLink": "https://liuidealab.typeform.com/to/eEnt8DVd",
+          "registrationNote": null
+        },
+        {
+          "name": "NRLC Round 1: MBAs",
+          "date": "March 17, 2026",
+          "time": "6:00 PM",
+          "location": "Virtual",
+          "registrationLink": null,
+          "registrationNote": "NRLC applicants only"
+        },
+        {
+          "name": "NRLC Round 1: Campus Wide",
+          "date": "March 24, 2026",
+          "time": "6:00 PM",
+          "location": "Virtual",
+          "registrationLink": null,
+          "registrationNote": null
+        },
+        {
+          "name": "NRLC Round 2",
+          "date": "April 2, 2026",
+          "time": "6:00 PM",
+          "location": "Cambridge Office Building 130",
+          "registrationLink": null,
+          "registrationNote": "Invited teams only - no audience"
+        },
+        {
+          "name": "NRLC Championships",
+          "date": "April 21, 2026",
+          "time": "5:30 PM",
+          "location": "Grand Hall",
+          "registrationLink": "https://luma.com/jz838p3q",
+          "registrationNote": "Audience members welcome"
+        }
+      ]
+    }
+  }
+}
