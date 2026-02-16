@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lilie — Undergraduate Entrepreneurship Resources | Rice University</title>
+<meta name="description" content="Courses, programs, and events for undergraduate students at Rice University's Liu Idea Lab for Innovation & Entrepreneurship.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=IBM+Plex+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#002469;
+  --blue:#1479E8;
+  --cyan:#17B9E2;
+  --red:#EE243E;
+  --text:#555;
+  --text-dark:#333;
+  --text-light:#999;
+  --border:#d0d0d0;
+  --border-blue:#1479E8;
+  --bg:#fafafa;
+  --white:#fff;
+  --body:'Lato','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+  --transition:0.25s ease;
+  --wrap:1100px;
+}
+html{scroll-behavior:smooth;scroll-padding-top:56px}
+body{font-family:var(--body);font-weight:400;font-size:16px;line-height:1.65;color:var(--text);background:var(--white)}
+a{color:var(--blue);text-decoration:none;transition:color var(--transition)}
+a:hover{color:var(--navy)}
+h1,h2,h3,h4{font-family:var(--mono);color:var(--text-dark);font-weight:500;line-height:1.2}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+
+/* ── Header ── */
+.site-header{
+  border-bottom:1px solid #eee;padding:48px 0 40px;
+  background:var(--white);
+}
+.site-header h1{
+  font-size:24px;font-weight:500;color:var(--navy);
+  margin-bottom:4px;letter-spacing:0;
+}
+.site-header .subtitle{
+  font-size:15px;color:var(--text-light);font-weight:400;
+}
+.site-header .ranking{
+  font-family:var(--mono);font-size:12px;font-weight:400;
+  color:var(--blue);margin-top:8px;
+}
+
+/* ── Nav ── */
+.nav{
+  position:sticky;top:0;z-index:100;background:var(--white);
+  border-bottom:1px solid #eee;transition:box-shadow var(--transition);
+}
+.nav.scrolled{box-shadow:0 1px 8px rgba(0,0,0,.06)}
+.nav-inner{
+  display:flex;align-items:center;justify-content:center;
+  max-width:var(--wrap);margin:0 auto;padding:0 32px;height:48px;
+}
+.nav-links{display:flex;gap:0;list-style:none}
+.nav-links a{
+  display:block;padding:12px 16px;font-size:14px;font-weight:400;
+  color:var(--text);text-decoration:none;
+  border-bottom:2px solid transparent;transition:all var(--transition);
+}
+.nav-links a:hover,.nav-links a.active{color:var(--navy);border-bottom-color:var(--blue)}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:20px;height:1.5px;background:var(--navy);margin:4px 0;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+@media(max-width:640px){
+  .hamburger{display:block}
+  .nav-links{
+    display:none;flex-direction:column;position:absolute;top:48px;left:0;right:0;
+    background:var(--white);padding:8px 0;border-bottom:1px solid #eee;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:10px 32px;border-bottom:none}
+}
+
+/* ── Sections ── */
+.section{padding:56px 0}
+.section+.section{border-top:1px solid #eee}
+.section-header{margin-bottom:32px}
+.section-header h2{font-size:20px;letter-spacing:0;margin-bottom:4px;color:var(--navy);font-weight:500}
+.section-label{
+  font-family:var(--mono);font-size:11px;font-weight:400;
+  color:var(--blue);text-transform:uppercase;letter-spacing:.5px;
+  margin-bottom:4px;display:block;
+}
+.section-header p{color:var(--text);font-size:14px}
+
+/* ── Welcome ── */
+.welcome-text{font-size:15px;color:var(--text);line-height:1.7;max-width:680px;margin-bottom:36px}
+.welcome-text strong{color:var(--text-dark)}
+.category-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.cat-card{
+  border:1px solid var(--border);padding:28px 24px;
+  text-decoration:none;color:inherit;transition:all var(--transition);
+}
+.cat-card:not(:last-child){border-right:none}
+.cat-card:hover{border-color:var(--blue);background:var(--bg)}
+.cat-card h3{font-size:15px;color:var(--navy);margin-bottom:6px;font-weight:500}
+.cat-card p{font-size:13px;color:var(--text);line-height:1.5}
+@media(max-width:640px){
+  .category-cards{grid-template-columns:1fr}
+  .cat-card:not(:last-child){border-right:1px solid var(--border);border-bottom:none}
+}
+
+/* ── Courses ── */
+.tabs{display:flex;gap:0;margin-bottom:28px;border-bottom:1px solid #eee}
+.tab-btn{
+  padding:10px 20px;border:none;border-bottom:2px solid transparent;
+  background:transparent;color:var(--text);font-family:var(--body);
+  font-size:14px;font-weight:400;cursor:pointer;transition:all var(--transition);
+}
+.tab-btn:hover{color:var(--navy)}
+.tab-btn.active{color:var(--blue);border-bottom-color:var(--blue);font-weight:700}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+.tab-description{font-size:14px;color:var(--text);font-style:italic;margin-bottom:24px;max-width:640px}
+.course-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:0}
+.course-card{
+  border:1px solid var(--border);padding:20px 22px;
+  transition:all var(--transition);margin-top:-1px;margin-left:-1px;
+}
+.course-card:hover{border-color:var(--blue);z-index:1}
+.course-code{font-family:var(--mono);font-size:12px;color:var(--blue);margin-bottom:2px}
+.course-name{font-size:14px;color:var(--text-dark);margin-bottom:6px;font-weight:400}
+.badge{
+  display:inline-block;font-family:var(--mono);font-size:10px;font-weight:400;
+  padding:2px 8px;margin-right:4px;margin-top:4px;border:1px solid;
+}
+.badge-prereq{border-color:var(--blue);color:var(--blue)}
+.badge-permission{border-color:var(--red);color:var(--red)}
+
+/* ── Programs ── */
+.funding-ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.program-card{
+  border:1px solid var(--border);padding:28px 24px;
+  display:flex;flex-direction:column;transition:all var(--transition);
+}
+.program-card:not(:last-child){border-right:none}
+.program-card:hover{border-color:var(--blue)}
+.program-funding{font-size:24px;font-weight:500;color:var(--blue);margin-bottom:2px}
+.program-name{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:2px}
+.program-short{font-family:var(--mono);font-size:11px;color:var(--text-light);margin-bottom:12px;text-transform:uppercase}
+.program-desc{font-size:14px;color:var(--text);margin-bottom:10px;flex:1;line-height:1.6}
+.program-details{font-size:13px;color:var(--text-light);margin-bottom:12px;line-height:1.6}
+.program-deadline{font-family:var(--mono);font-size:12px;color:var(--navy);margin-bottom:12px}
+.btn{
+  display:inline-block;padding:10px 28px;font-size:13px;font-weight:400;
+  text-align:center;transition:all var(--transition);font-family:var(--mono);
+  text-decoration:none;text-transform:uppercase;letter-spacing:.5px;
+}
+.btn-primary{background:var(--navy);color:var(--white);border:1px solid var(--navy)}
+.btn-primary:hover{background:var(--white);color:var(--navy)}
+.btn-accent{background:var(--red);color:var(--white);border:1px solid var(--red)}
+.btn-accent:hover{background:var(--white);color:var(--red)}
+.program-apply{margin-top:auto}
+@media(max-width:800px){
+  .funding-ladder{grid-template-columns:1fr}
+  .program-card:not(:last-child){border-right:1px solid var(--border);border-bottom:none}
+}
+
+/* ── Events ── */
+.fiesta-card{
+  background:var(--navy);color:var(--white);padding:36px 32px;margin-bottom:40px;
+}
+.fiesta-card h3{font-size:18px;font-weight:500;color:var(--cyan);margin-bottom:8px}
+.fiesta-card>p{opacity:.7;margin-bottom:16px;font-size:14px;line-height:1.6;max-width:600px}
+.fiesta-dates{display:flex;flex-wrap:wrap;gap:8px}
+.fiesta-date-chip{
+  border:1px solid rgba(255,255,255,.2);padding:6px 14px;
+  font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.7);
+}
+.fiesta-date-chip strong{color:var(--cyan)}
+.fiesta-note{margin-top:14px;font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.4)}
+
+.event-subsection{margin-bottom:48px}
+.event-subsection h3{font-size:16px;font-weight:500;color:var(--navy);margin-bottom:6px}
+.event-subsection>p{color:var(--text);font-size:14px;margin-bottom:20px;max-width:680px;line-height:1.6}
+
+.vdw-timeline{position:relative;padding-left:28px}
+.vdw-timeline::before{content:'';position:absolute;left:5px;top:4px;bottom:4px;width:1px;background:var(--border)}
+.vdw-item{position:relative;margin-bottom:22px;padding-left:18px}
+.vdw-item::before{
+  content:'';position:absolute;left:-27px;top:6px;width:10px;height:10px;
+  border:1.5px solid var(--blue);background:var(--white);border-radius:50%;
+}
+.vdw-item:hover::before{background:var(--blue)}
+.vdw-item-date{font-family:var(--mono);font-size:12px;color:var(--blue)}
+.vdw-item-name{font-size:15px;color:var(--text-dark);margin:1px 0 3px;font-weight:400}
+.vdw-item-meta{font-size:13px;color:var(--text-light)}
+.vdw-item-meta a{color:var(--blue)}
+
+.ignition-card{
+  border:1px solid var(--border);padding:28px 28px;
+  display:flex;align-items:center;gap:28px;flex-wrap:wrap;transition:all var(--transition);
+}
+.ignition-card:hover{border-color:var(--blue)}
+.ignition-info{flex:1;min-width:240px}
+.ignition-info h4{font-size:15px;margin-bottom:6px;color:var(--navy);font-weight:500}
+.ignition-info p{font-size:14px;color:var(--text);margin-bottom:10px;line-height:1.6}
+.ignition-details{font-family:var(--mono);font-size:12px;color:var(--text)}
+.ignition-details span{display:inline-block;margin-right:20px}
+
+.nrlc-stepper{display:flex;overflow-x:auto;gap:0;padding:8px 0 16px}
+.nrlc-step{flex:1 0 0;min-width:140px;text-align:center;position:relative;padding:0 6px}
+.nrlc-step::after{
+  content:'';position:absolute;top:16px;left:calc(50% + 18px);
+  width:calc(100% - 36px);height:1px;background:var(--border);
+}
+.nrlc-step:last-child::after{display:none}
+.nrlc-step-dot{
+  width:34px;height:34px;border-radius:50%;
+  border:1.5px solid var(--blue);background:var(--white);
+  color:var(--blue);font-weight:700;font-size:14px;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 8px;position:relative;z-index:1;
+}
+.nrlc-step:last-child .nrlc-step-dot{background:var(--navy);border-color:var(--navy);color:var(--white)}
+.nrlc-step-name{font-size:12px;font-weight:500;color:var(--navy);margin-bottom:1px}
+.nrlc-step-date{font-family:var(--mono);font-size:11px;color:var(--text-light)}
+.nrlc-step-note{font-family:var(--mono);font-size:10px;color:var(--blue);margin-top:2px}
+.nrlc-step a{font-family:var(--mono);font-size:11px}
+
+/* ── Misc ── */
+.loading{text-align:center;padding:80px 24px;font-size:14px;color:var(--text-light)}
+.loading-spinner{
+  width:28px;height:28px;border:2px solid #eee;border-top-color:var(--blue);
+  border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 12px;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.skip-link{
+  position:absolute;top:-100px;left:16px;background:var(--navy);color:var(--white);
+  padding:8px 16px;z-index:200;font-size:13px;transition:top .2s;
+}
+.skip-link:focus{top:0}
+.site-footer{
+  border-top:1px solid #eee;padding:24px 0;font-size:12px;color:var(--text-light);
+  text-align:center;
+}
+.site-footer a{color:var(--text-light)}
+.site-footer a:hover{color:var(--blue)}
+</style>
+</head>
+
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <h1>Liu Idea Lab for Innovation &amp; Entrepreneurship</h1>
+    <div class="subtitle">Resources Guide for Undergraduate Students</div>
+    <div class="ranking">#1 U.S. Entrepreneurship Program &mdash; Princeton Review, 2020&ndash;2025</div>
+  </div>
+</header>
+
+<nav class="nav" role="navigation" aria-label="Main">
+  <div class="nav-inner">
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" role="menubar">
+      <li role="none"><a role="menuitem" href="#courses">Courses</a></li>
+      <li role="none"><a role="menuitem" href="#programs">Programs</a></li>
+      <li role="none"><a role="menuitem" href="#events">Events</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div id="loading" class="loading">
+    <div class="loading-spinner"></div>
+    Loading&hellip;
+  </div>
+
+  <div id="app" style="display:none">
+
+    <section class="section">
+      <div class="wrap">
+        <p class="welcome-text">
+          Everything Lilie offers undergraduate students &mdash; <strong>courses</strong> you can take for credit,
+          <strong>programs</strong> that come with funding, and <strong>events</strong>
+          happening this year.
+        </p>
+        <div class="category-cards">
+          <a class="cat-card" href="#courses">
+            <h3>Courses</h3>
+            <p>Classes for credit, from intro to advanced</p>
+          </a>
+          <a class="cat-card" href="#programs">
+            <h3>Programs</h3>
+            <p>Seed grants, accelerators, and venture support</p>
+          </a>
+          <a class="cat-card" href="#events">
+            <h3>Events &amp; Experiences</h3>
+            <p>Workshops, pitch nights, and FIESTA</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses" class="section">
+      <div class="wrap">
+        <div class="section-header">
+          <h2>Courses</h2>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Course categories">
+          <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-learn" id="tab-learn" data-tab="learn">Learn</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-practice" id="tab-practice" data-tab="practice">Practice</button>
+        </div>
+        <div id="panel-learn" class="tab-panel active" role="tabpanel" aria-labelledby="tab-learn">
+          <p class="tab-description" id="learn-desc"></p>
+          <div class="course-grid" id="learn-courses"></div>
+        </div>
+        <div id="panel-practice" class="tab-panel" role="tabpanel" aria-labelledby="tab-practice">
+          <p class="tab-description" id="practice-desc"></p>
+          <div class="course-grid" id="practice-courses"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="programs" class="section">
+      <div class="wrap">
+        <div class="section-header">
+          <h2>Programs</h2>
+        </div>
+        <div class="funding-ladder" id="programs-grid"></div>
+      </div>
+    </section>
+
+    <section id="events" class="section">
+      <div class="wrap">
+        <div class="section-header">
+          <h2>Events &amp; Experiences</h2>
+        </div>
+        <div id="fiesta-container"></div>
+        <div class="event-subsection" id="vdw-container">
+          <h3>Venture Development Workshops</h3>
+          <p id="vdw-desc"></p>
+          <div class="vdw-timeline" id="vdw-timeline"></div>
+        </div>
+        <div class="event-subsection" id="ignition-container">
+          <h3>Ignition Hub</h3>
+          <p id="ignition-desc"></p>
+          <div id="ignition-events"></div>
+        </div>
+        <div class="event-subsection" id="nrlc-container">
+          <h3>Napier Rice Launch Challenge</h3>
+          <p id="nrlc-desc"></p>
+          <div class="nrlc-stepper" id="nrlc-stepper" role="list"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="https://entrepreneurship.rice.edu" target="_blank" rel="noopener">entrepreneurship.rice.edu</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://lu.ma/liuidealab" target="_blank" rel="noopener">Events Calendar</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://riceentreprenuership.submittable.com/submit" target="_blank" rel="noopener">Apply to Programs</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return document.querySelectorAll(s)};
+
+  fetch('data.json')
+    .then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
+    .then(function(data){
+      renderCourses(data.courses);
+      renderPrograms(data.programs);
+      renderEvents(data.events);
+      $('#loading').style.display='none';
+      $('#app').style.display='block';
+    })
+    .catch(function(err){
+      $('#loading').innerHTML='<p style="color:#EE243E">Failed to load data.</p>';
+      console.error(err);
+    });
+
+  function courseNum(code){var m=code.match(/(\d+)/);return m?parseInt(m[1],10):9999}
+  function sortCourses(list){return list.slice().sort(function(a,b){return courseNum(a.code)-courseNum(b.code)})}
+
+  // Filter out header/template rows from the Google Sheet
+  function isHeaderRow(obj){
+    var vals=[obj.name,obj.code,obj.date,obj.time,obj.location].filter(Boolean);
+    var headers=['event name','event date','event time','location','class name','course code','registration link'];
+    return vals.some(function(v){return headers.indexOf(String(v).toLowerCase().trim())>=0});
+  }
+
+  // Parse raw Date.toString() strings like "Mon Aug 24 2026 00:00:00 GMT-0500 (Central Daylight Time)"
+  var monthMap={Jan:'January',Feb:'February',Mar:'March',Apr:'April',May:'May',Jun:'June',
+                Jul:'July',Aug:'August',Sep:'September',Oct:'October',Nov:'November',Dec:'December'};
+  function formatDateStr(s){
+    if(!s)return '';
+    var m=String(s).match(/^[A-Z][a-z]{2}\s+([A-Z][a-z]{2})\s+(\d{1,2})\s+(\d{4})/);
+    if(m)return monthMap[m[1]]+' '+parseInt(m[2],10)+', '+m[3];
+    // Already formatted or plain text
+    return s;
+  }
+  function formatTimeStr(s){
+    if(!s)return '';
+    // Handle 1899 sentinel dates (time-only from Google Sheets)
+    var m=String(s).match(/1899\s+(\d{1,2}):(\d{2}):(\d{2})/);
+    if(m){var h=parseInt(m[1],10);var min=m[2];var ap=h>=12?'PM':'AM';h=h%12||12;return h+':'+min+' '+ap;}
+    // Already formatted like "10:00 AM - 2:00 PM"
+    return s;
+  }
+
+  function renderCourses(c){
+    if(!c)return;
+    $('#learn-desc').textContent=c.learnDescription||'';
+    $('#practice-desc').textContent=c.practiceDescription||'';
+    var filterCourses=function(list){return (list||[]).filter(function(x){return /^[A-Z]{3,5}\s*\d{3}/i.test(x.code)})};
+    renderGrid('#learn-courses',sortCourses(filterCourses(c.learn)));
+    renderGrid('#practice-courses',sortCourses(filterCourses(c.practice)));
+  }
+  function renderGrid(sel,list){
+    var el=$(sel);if(!el)return;
+    el.innerHTML=list.map(function(c){
+      var b='';
+      if(c.prereqs)b+='<span class="badge badge-prereq">Prereq: '+esc(c.prereqs)+'</span>';
+      if(c.permission)b+='<span class="badge badge-permission">'+esc(c.permission)+'</span>';
+      return '<div class="course-card"><div class="course-code">'+esc(c.code)+'</div><div class="course-name">'+esc(c.name)+'</div>'+(b?'<div>'+b+'</div>':'')+'</div>';
+    }).join('');
+  }
+
+  function renderPrograms(progs){
+    if(!progs||!progs.length)return;
+    var el=$('#programs-grid');if(!el)return;
+    el.innerHTML=progs.map(function(p){
+      var f=p.funding?'$'+Number(p.funding).toLocaleString():'';
+      var dl=p.deadline?formatDate(p.deadline):'';
+      return '<div class="program-card">'+
+        '<div class="program-funding">'+esc(f)+'</div>'+
+        '<div class="program-name">'+esc(p.name)+'</div>'+
+        '<div class="program-short">'+esc(p.shortName||'')+'</div>'+
+        '<p class="program-desc">'+esc(p.description)+'</p>'+
+        (p.details?'<p class="program-details">'+esc(p.details)+'</p>':'')+
+        (p.applicationProcess?'<p class="program-details"><strong>How to apply:</strong> '+esc(p.applicationProcess)+'</p>':'')+
+        (dl?'<p class="program-deadline">Application closes '+esc(dl)+'</p>':'')+
+        (p.applyUrl?'<div class="program-apply"><a class="btn btn-primary" href="'+esc(p.applyUrl)+'" target="_blank" rel="noopener">Apply Now</a></div>':'')+
+        '</div>';
+    }).join('');
+  }
+
+  function renderEvents(ev){
+    if(!ev)return;
+    renderFiesta(ev.fiesta);renderVDW(ev.vdw);renderIgnition(ev.ignitionHub);renderNRLC(ev.nrlc,ev.vdw);
+  }
+  function renderFiesta(f){
+    if(!f)return;var el=$('#fiesta-container');if(!el)return;
+    var dates=(f.dates||[]).filter(function(d){return !isHeaderRow(d)});
+    if(!dates.length){el.innerHTML='';return}
+    var note='';
+    var chips=dates.map(function(d){
+      if(d.registrationNote)note=d.registrationNote;
+      return '<div class="fiesta-date-chip"><strong>'+esc(formatDateStr(d.date))+'</strong> &middot; '+esc(formatTimeStr(d.time))+' &middot; '+esc(d.location)+'</div>';
+    }).join('');
+    el.innerHTML='<div class="fiesta-card"><h3>FIESTA</h3>'+(f.description?'<p>'+esc(f.description)+'</p>':'')+
+      '<div class="fiesta-dates">'+chips+'</div>'+
+      (note?'<p class="fiesta-note">'+esc(note)+'</p>':'')+
+      '</div>';
+  }
+  function renderVDW(v){
+    if(!v)return;$('#vdw-desc').textContent=v.description||'';
+    var el=$('#vdw-timeline');if(!el)return;
+    // Filter out header rows and NRLC events that got mixed into VDW data
+    var workshops=(v.workshops||[]).filter(function(w){
+      if(isHeaderRow(w))return false;
+      if(/^nrlc/i.test(w.name))return false;
+      return true;
+    });
+    el.innerHTML=workshops.map(function(w){
+      var r='';
+      if(w.registrationLink)r=' &middot; <a href="'+esc(w.registrationLink)+'" target="_blank" rel="noopener">Register</a>';
+      else if(w.registrationNote)r=' &middot; <em>'+esc(w.registrationNote)+'</em>';
+      return '<div class="vdw-item"><div class="vdw-item-date">'+esc(formatDateStr(w.date))+' &middot; '+esc(formatTimeStr(w.time))+'</div><div class="vdw-item-name">'+esc(w.name)+'</div><div class="vdw-item-meta">'+esc(w.location||'')+r+'</div></div>';
+    }).join('');
+  }
+  function renderIgnition(ig){
+    if(!ig)return;$('#ignition-desc').textContent=ig.description||'';
+    var el=$('#ignition-events');if(!el)return;
+    var events=(ig.events||[]).filter(function(e){return !isHeaderRow(e)});
+    el.innerHTML=events.map(function(e){
+      return '<div class="ignition-card"><div class="ignition-info"><h4>'+esc(e.name)+'</h4>'+(ig.description?'<p>'+esc(ig.description)+'</p>':'')+'<div class="ignition-details"><span>'+esc(formatDateStr(e.date))+'</span><span>'+esc(formatTimeStr(e.time))+'</span><span>'+esc(e.location)+'</span></div></div>'+
+        (e.registrationLink?'<a class="btn btn-accent" href="'+esc(e.registrationLink)+'" target="_blank" rel="noopener">Register</a>':'')+
+        '</div>';
+    }).join('');
+  }
+  function renderNRLC(n,vdwData){
+    if(!n)return;
+    var desc=n.description||'';
+    if(n.applicationDeadline)desc+=(desc?' ':'')+'Applications are due '+n.applicationDeadline+'.';
+    $('#nrlc-desc').textContent=desc;
+    var el=$('#nrlc-stepper');if(!el)return;
+    // Use rounds from nrlc data, or extract NRLC events embedded in VDW data
+    var rounds=(n.rounds||[]).filter(function(r){return !isHeaderRow(r)});
+    if(!rounds.length&&vdwData&&vdwData.workshops){
+      rounds=vdwData.workshops.filter(function(w){return !isHeaderRow(w)&&/^nrlc/i.test(w.name)});
+    }
+    el.innerHTML=rounds.map(function(r,i){
+      var lk='';
+      if(r.registrationLink){
+        var linkUrl=r.registrationLink.split(/\r?\n/)[0].trim();
+        var linkNote=r.registrationNote||r.registrationLink.split(/\r?\n/).slice(1).join(' ').trim()||'Register';
+        lk='<a href="'+esc(linkUrl)+'" target="_blank" rel="noopener">'+esc(linkNote)+'</a>';
+      }
+      else if(r.registrationNote)lk='<span class="nrlc-step-note">'+esc(r.registrationNote)+'</span>';
+      return '<div class="nrlc-step" role="listitem"><div class="nrlc-step-dot">'+(i+1)+'</div><div class="nrlc-step-name">'+esc(r.name)+'</div><div class="nrlc-step-date">'+esc(formatDateStr(r.date))+'</div>'+lk+'</div>';
+    }).join('');
+  }
+
+  // Tabs
+  document.addEventListener('click',function(e){
+    if(!e.target.classList.contains('tab-btn'))return;
+    var tab=e.target.dataset.tab;
+    $$('.tab-btn').forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false')});
+    e.target.classList.add('active');e.target.setAttribute('aria-selected','true');
+    $$('.tab-panel').forEach(function(p){p.classList.remove('active')});
+    var panel=$('#panel-'+tab);if(panel)panel.classList.add('active');
+  });
+
+  // Hamburger
+  var burger=$('.hamburger'),navLinks=$('.nav-links');
+  if(burger){
+    burger.addEventListener('click',function(){
+      var open=navLinks.classList.toggle('open');
+      burger.classList.toggle('open');
+      burger.setAttribute('aria-expanded',open);
+    });
+    navLinks.addEventListener('click',function(e){
+      if(e.target.tagName==='A'){navLinks.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false')}
+    });
+  }
+
+  // Nav shadow + scroll spy
+  var nav=$('.nav');
+  var secs=['courses','programs','events'];
+  window.addEventListener('scroll',function(){
+    nav.classList.toggle('scrolled',window.scrollY>10);
+    var sy=window.scrollY+64,cur='';
+    secs.forEach(function(id){var s=document.getElementById(id);if(s&&s.offsetTop<=sy)cur=id});
+    $$('.nav-links a').forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur)});
+  });
+
+  function esc(s){if(s==null)return '';var d=document.createElement('div');d.appendChild(document.createTextNode(String(s)));return d.innerHTML}
+  function formatDate(s){if(!s)return '';if(/[A-Za-z]/.test(s))return s;var d=new Date(s+'T00:00:00');if(isNaN(d.getTime()))return s;return d.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}
+})();
+</script>
+</body>
+</html>
