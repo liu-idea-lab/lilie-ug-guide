@@ -2,67 +2,31 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project Overview
+## Current state: retired, redirects only
 
-A static website for Rice University's Liu Idea Lab (Lilie) undergraduate entrepreneurship resources. Displays courses, programs, and events sourced from a Google Sheet.
+As of August 2026 this site no longer publishes content. `index.html` is a redirect to
+https://entrepreneurship.rice.edu/, which is now the single source for undergraduate
+courses, programs, and events.
 
-## Architecture
+Live URL: https://liu-idea-lab.github.io/lilie-ug-guide/ (GitHub Pages, `main` branch, root).
 
-**No build tools, no package manager, no framework.** The entire frontend is two files:
+The redirect uses three layers so it works with or without JavaScript: a `meta refresh`,
+a `location.replace()` call, and a visible link as the fallback. `rel="canonical"` and
+`noindex` point search engines at the Lilie site instead of this one.
 
-- `index.html` — Single-page app with embedded CSS and vanilla JavaScript (IIFE pattern)
-- `data.json` — Content data, auto-generated from a Google Sheet via Apps Script + OpenAI
+Why it was retired: the content had gone stale (BUSI course codes after the Fall 2026
+ENTR migration, spring 2026 event dates, a missing course) and keeping a second listing
+in sync with entrepreneurship.rice.edu was not worth the upkeep.
 
-**Data pipeline:**
-```
-Google Sheet → Code.gs (Apps Script) → OpenAI API (gpt-4o-mini) → structured JSON → GitHub API → data.json → index.html (fetch + DOM render)
-```
+## Legacy: the old data pipeline
 
-- `Code.gs` — Google Apps Script that converts each sheet to a markdown table, sends it to OpenAI with schema instructions, validates the response, and pushes `data.json` to GitHub. Not tracked in git.
-- `SETUP.md` — Deployment/setup guide. Not tracked in git.
+`data.json` is still in the repo but nothing reads it. It was generated from a Google
+Sheet through an Apps Script (`Code.gs`, never tracked here) that called OpenAI to turn
+each sheet tab into structured JSON, then pushed the result to `main` via the GitHub API.
 
-**Code.gs key functions:**
-- `callOpenAI(systemPrompt, userContent)` — generic OpenAI API wrapper with retry on 429
-- `sheetToMarkdownTable(sheet)` — converts sheet data to markdown, pre-formatting Date objects
-- `formatCellForPrompt(val)` — handles Date objects (→ "Month Day, Year") and 1899 sentinel times (→ "H:MM AM/PM")
-- `parseCourses/parsePrograms/parseEvents` — each sends its sheet as markdown + a system prompt defining the JSON schema
-- `parseLLMResponse(raw, sectionName)` — validates the LLM returned valid JSON
+If someone runs "Publish > Publish to Website" from that Sheet, it will overwrite
+`data.json` and nothing visible will change. Removing the Apps Script trigger is the
+clean way to stop that. Before deleting `data.json`, check the script is gone, since it
+pushes by blob SHA and may error against a missing file.
 
-**Script Properties required:**
-- `GITHUB_TOKEN`, `GITHUB_OWNER` (`liu-idea-lab`), `GITHUB_REPO` (`lilie-ug-guide`), `GITHUB_BRANCH` (`main`)
-- `OPENAI_API_KEY` — OpenAI API key
-- `OPENAI_MODEL` — optional, defaults to `gpt-4o-mini`
-
-## Development
-
-Serve locally with any HTTP server (fetch won't work from `file://`):
-```
-python3 -m http.server 8000
-```
-
-No tests, no linting, no build step. Edit `index.html` directly and refresh the browser.
-
-## Data Format
-
-The OpenAI-based parser in Code.gs produces clean data, but the frontend retains safety-net workarounds for robustness:
-
-1. **Header row filter**: `isHeaderRow()` in index.html still filters rows where name="Event Name" etc., in case the LLM misses one.
-
-2. **Date/time formatters**: `formatDateStr()` and `formatTimeStr()` in index.html handle both pre-formatted strings (from the new pipeline) and raw Date.toString() strings (legacy fallback).
-
-3. **NRLC extraction**: The frontend still checks for NRLC events in `vdw.workshops` as a fallback, though the LLM prompt instructs correct routing to `nrlc.rounds`.
-
-4. **Registration links with notes**: Now split server-side into `registrationLink` and `registrationNote` fields.
-
-5. **Programs may be empty**: `data.json` may have `"programs": []` if the Programs sheet isn't populated yet.
-
-## CSS Conventions
-
-- CSS custom properties defined in `:root` — colors (`--navy`, `--blue`, `--cyan`, `--red`), fonts (`--body`, `--mono`), spacing
-- Single breakpoint at 640px for mobile
-- No CSS framework — plain flexbox/grid layouts
-- XSS prevention via `esc()` function using `document.createTextNode()`
-
-## Publishing Content Updates
-
-Content is published from Google Sheets via the "Publish > Publish to Website" menu, which runs `publishToGitHub()` in Code.gs. This converts each sheet to markdown, calls OpenAI for structured parsing, and pushes the resulting `data.json` to the `main` branch. GitHub Pages auto-deploys. Cost is ~$0.003 per publish with gpt-4o-mini.
+The pre-redirect version of the site is in git history at commit `5c40a93`.
